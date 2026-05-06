@@ -1,12 +1,7 @@
 import { Nav } from "./components/Nav";
 import { Hero } from "./components/Hero";
-import { Trust } from "./components/Trust";
-import { Story } from "./components/Story";
-import { Craft } from "./components/Craft";
+import { Services } from "./components/Services";
 import { Catalog } from "./components/Catalog";
-import { Signature } from "./components/Signature";
-import { Reviews } from "./components/Reviews";
-import { Stats } from "./components/Stats";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { RevealInit } from "./components/Reveal";
@@ -17,13 +12,8 @@ export default function HomePage() {
       <Nav />
       <main>
         <Hero />
-        <Trust />
-        <Story />
-        <Craft />
+        <Services />
         <Catalog />
-        <Signature />
-        <Reviews />
-        <Stats />
         <Contact />
       </main>
       <Footer />

@@ -117,11 +117,14 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 .nav-inner {
   max-width: var(--maxw);
   margin: 0 auto;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
   gap: 24px;
 }
+.nav-inner > .logo { justify-self: start; }
+.nav-inner > .nav-links { justify-self: center; }
+.nav-inner > .nav-toggle { justify-self: end; }
 .logo {
   display: flex; align-items: center; gap: 12px;
   font-family: var(--serif);
@@ -530,6 +533,58 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
   line-height: 1.65;
 }
 
+/* ============ GALLERY PAGE ============ */
+.gallery-hero {
+  padding: 160px 0 64px;
+  border-bottom: 1px solid var(--rule);
+}
+
+/* ============ SERVICES ============ */
+.services {
+  padding: 100px 0;
+  background: var(--ink-2);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+.services-head {
+  margin-bottom: 56px;
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+}
+.service-card {
+  background: var(--ink-2);
+  padding: 36px 32px;
+  transition: background .3s;
+}
+.service-card:hover {
+  background: color-mix(in oklch, var(--ink-2) 85%, var(--brass));
+}
+.service-card h3 {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--cream);
+  margin-bottom: 14px;
+  letter-spacing: -.01em;
+}
+.service-card h3::before {
+  content: "✦";
+  color: var(--brass);
+  font-size: 10px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+.service-card p {
+  font-size: 14px;
+  line-height: 1.65;
+  color: color-mix(in oklch, var(--parchment) 70%, transparent);
+}
+
 /* ============ CATALOG ============ */
 .catalog { padding: 140px 0; }
 .catalog-head {
@@ -564,9 +619,8 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 }
 .catalog-grid {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-auto-rows: 180px;
-  gap: 14px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 .card {
   position: relative;
@@ -576,6 +630,7 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
   cursor: pointer;
   transition: border-color .3s;
   display: block;
+  aspect-ratio: 3/4;
 }
 .card:hover { border-color: var(--brass); }
 .card .card-img {
@@ -633,15 +688,19 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
   backdrop-filter: blur(6px);
   z-index: 2;
 }
-.card.large { grid-column: span 6; grid-row: span 3; }
-.card.tall  { grid-column: span 4; grid-row: span 3; }
-.card.wide  { grid-column: span 8; grid-row: span 2; }
-.card.med   { grid-column: span 4; grid-row: span 2; }
-.card.sm    { grid-column: span 4; grid-row: span 2; }
 
 .card[hidden] { display: none; }
 
 /* ============ SIGNATURE ============ */
+/* (removed) */
+
+/* ============ REVIEWS ============ */
+/* (removed) */
+
+/* ============ STATS ============ */
+/* (removed) */
+
+/* ============ PLACEHOLDER ============ */
 .signature {
   padding: 140px 0;
   background: var(--ink-2);
@@ -1014,7 +1073,7 @@ footer.f {
 .f-grid {
   position: relative; z-index: 2;
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr 1.4fr;
+  grid-template-columns: 2fr 1fr 1fr 1.4fr;
   gap: 56px;
   margin-bottom: 80px;
 }
@@ -1083,21 +1142,12 @@ footer.f {
 @media (max-width: 1080px) {
   .nav-links, .nav-cta { display: none; }
   .nav-toggle { display: inline-flex; }
-  .hero-inner, .story-grid, .craft-head, .sig-grid, .contact-grid { grid-template-columns: 1fr; gap: 56px; }
+  .hero-inner, .contact-grid { grid-template-columns: 1fr; gap: 56px; }
   .hero-art { max-width: 520px; }
-  .story-left { position: static; }
-  .craft-steps { grid-template-columns: repeat(2, 1fr); }
-  .step:nth-child(2) { border-right: 0; }
-  .step:nth-child(1), .step:nth-child(2) { border-bottom: 1px solid var(--rule); }
-  .review-grid { grid-template-columns: 1fr; }
-  .stats-grid { grid-template-columns: repeat(2, 1fr); }
-  .stat:nth-child(2) { border-right: 0; }
-  .stat:nth-child(1), .stat:nth-child(2) { border-bottom: 1px solid var(--rule); padding-bottom: 36px; margin-bottom: 0; }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .catalog-grid { grid-template-columns: repeat(2, 1fr); }
   .f-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
   .f-news { grid-column: 1 / -1; }
-  .catalog-grid { grid-auto-rows: 160px; }
-  .card.large, .card.tall, .card.wide { grid-column: span 12; grid-row: span 3; }
-  .card.med, .card.sm { grid-column: span 6; grid-row: span 2; }
 }
 
 @media (max-width: 720px) {
@@ -1111,22 +1161,11 @@ footer.f {
   .hero-stamp { width: 120px; height: 120px; bottom: -20px; left: -10px; }
   .hero-stamp-inner { font-size: 9px; }
   .hero-stamp-inner .big { font-size: 28px; }
-  .story, .craft, .catalog, .signature, .reviews, .contact { padding: 80px 0; }
-  .story-figures figure:nth-child(2) { transform: none; }
-  .craft-steps { grid-template-columns: 1fr; }
-  .step { border-right: 0; border-bottom: 1px solid var(--rule); }
-  .step:last-child { border-bottom: 0; }
+  .services, .catalog, .contact { padding: 80px 0; }
+  .services-grid { grid-template-columns: 1fr; }
   .catalog-head { flex-direction: column; align-items: flex-start; }
-  .catalog-grid { grid-auto-rows: 130px; }
-  .card.large, .card.tall, .card.wide, .card.med, .card.sm { grid-column: span 12; grid-row: span 2; }
-  .card.large, .card.tall { grid-row: span 3; }
+  .catalog-grid { grid-template-columns: 1fr; }
   .card h3 { font-size: 22px; }
-  .rating-big { padding: 16px 22px; gap: 14px; }
-  .rating-big .score { font-size: 56px; }
-  .rating-meta { gap: 20px; font-size: 10px; }
-  .stats-grid { grid-template-columns: 1fr; }
-  .stat { border-right: 0; border-bottom: 1px solid var(--rule); padding: 28px 20px; }
-  .stat:last-child { border-bottom: 0; }
   .f-grid { grid-template-columns: 1fr; gap: 40px; margin-bottom: 60px; }
   .f::before { font-size: 140px; bottom: -40px; }
   .field-row { grid-template-columns: 1fr; gap: 0; }

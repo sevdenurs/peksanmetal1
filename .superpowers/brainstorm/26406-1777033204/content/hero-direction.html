@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hero Yönü</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #130e08; color: #f0e8da; font-family: 'Georgia', serif; padding: 40px 32px; min-height: 100vh; }
+  h2 { font-size: 24px; font-weight: 400; color: #f5ecd8; margin-bottom: 6px; }
+  .sub { font-size: 13px; color: #9a8060; font-style: italic; margin-bottom: 40px; }
+
+  .grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
+
+  .card { border: 1px solid rgba(201,169,97,.18); background: #1c1409; cursor: pointer; transition: border-color .25s, transform .2s; overflow: hidden; }
+  .card:hover { border-color: #d4b06a; transform: translateY(-2px); }
+  .card.selected { border-color: #d4b06a; box-shadow: 0 0 0 1px rgba(212,176,106,.3); }
+
+  .tag { font-family: monospace; font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: #d4b06a; padding: 10px 14px; border-bottom: 1px solid rgba(201,169,97,.12); display: flex; justify-content: space-between; background: rgba(212,176,106,.05); }
+  .letter { width: 22px; height: 22px; border: 1px solid #d4b06a; display: grid; place-items: center; font-size: 12px; }
+
+  /* MOCKUP A — Sol metin sağ görsel */
+  .hero-a {
+    height: 220px;
+    background: #1a1008;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-a .left { padding: 24px 20px; display: flex; flex-direction: column; justify-content: space-between; }
+  .hero-a .eyebrow { font-family: monospace; font-size: 8px; letter-spacing: .22em; color: #d4b06a; text-transform: uppercase; }
+  .hero-a .big-text { font-size: 32px; line-height: .9; letter-spacing: -.02em; color: #f5ecd8; font-weight: 300; }
+  .hero-a .big-text em { color: #d4b06a; font-style: italic; }
+  .hero-a .cta-row { display: flex; gap: 10px; align-items: center; }
+  .hero-a .btn { padding: 7px 14px; background: linear-gradient(180deg, #e8c97a, #c49944); color: #1a1008; font-size: 9px; letter-spacing: .15em; text-transform: uppercase; font-weight: 600; font-family: monospace; }
+  .hero-a .right { background: linear-gradient(135deg, #2a1c0e, #3d2816); position: relative; }
+  .hero-a .right::before { content: ""; position: absolute; inset: 14px; border: 1px solid rgba(201,169,97,.3); }
+  .hero-a .right::after { content: "KAPAK KOLU"; position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%); font-family: monospace; font-size: 8px; letter-spacing: .2em; color: rgba(212,176,106,.5); white-space: nowrap; }
+  .hero-a .product-shape { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-55%); width: 40px; height: 70px; background: linear-gradient(180deg, #c9a961, #9a7428); border-radius: 20px 20px 8px 8px; opacity: .7; }
+
+  /* MOCKUP B — Tam ekran merkez */
+  .hero-b {
+    height: 220px;
+    background: linear-gradient(160deg, #1a1008 0%, #2a1c0e 60%, #1a1008 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-b::before { content: ""; position: absolute; inset: 12px; border: 1px solid rgba(201,169,97,.12); pointer-events: none; }
+  .hero-b .big-text { font-size: 36px; line-height: .9; letter-spacing: -.025em; color: #f5ecd8; font-weight: 300; margin: 10px 0 14px; }
+  .hero-b .big-text em { color: #d4b06a; font-style: italic; }
+  .hero-b .eyebrow { font-family: monospace; font-size: 8px; letter-spacing: .25em; color: #d4b06a; text-transform: uppercase; }
+  .hero-b .sub-text { font-style: italic; font-size: 12px; color: rgba(240,232,218,.55); margin-bottom: 16px; }
+  .hero-b .btn { padding: 8px 20px; border: 1px solid #d4b06a; color: #d4b06a; font-family: monospace; font-size: 9px; letter-spacing: .18em; text-transform: uppercase; }
+
+  /* MOCKUP C — Asimetrik büyük metin + çarpıcı görsel */
+  .hero-c {
+    height: 220px;
+    background: #100c06;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+  }
+  .hero-c .bg-text { position: absolute; bottom: -20px; left: -8px; font-size: 100px; font-weight: 400; letter-spacing: -.03em; color: transparent; -webkit-text-stroke: 1px rgba(201,169,97,.08); pointer-events: none; line-height: 1; white-space: nowrap; }
+  .hero-c .content { position: relative; z-index: 2; padding: 0 20px 20px; width: 100%; }
+  .hero-c .eyebrow { font-family: monospace; font-size: 8px; letter-spacing: .22em; color: #d4b06a; text-transform: uppercase; margin-bottom: 8px; }
+  .hero-c .big-text { font-size: 28px; line-height: .95; letter-spacing: -.02em; color: #f5ecd8; font-weight: 300; }
+  .hero-c .big-text em { color: #d4b06a; font-style: italic; display: block; }
+  .hero-c .meta { position: absolute; right: 20px; bottom: 20px; text-align: right; }
+  .hero-c .meta .n { font-family: monospace; font-size: 9px; letter-spacing: .18em; color: rgba(212,176,106,.6); text-transform: uppercase; margin-bottom: 2px; }
+  .hero-c .meta .v { font-size: 22px; color: #d4b06a; font-weight: 400; }
+
+  .desc { padding: 16px 14px 14px; }
+  .desc h3 { font-size: 14px; font-weight: 400; color: #f0e8da; margin-bottom: 5px; }
+  .desc p { font-size: 12px; color: #907860; line-height: 1.5; }
+
+  .selection-hint { text-align: center; margin-top: 32px; font-family: monospace; font-size: 11px; letter-spacing: .15em; color: rgba(212,176,106,.45); text-transform: uppercase; }
+</style>
+<script>
+  function toggleSelect(el) {
+    document.querySelectorAll('.card').forEach(c => c.classList.remove('selected'));
+    el.classList.add('selected');
+    if (window.__companion) window.__companion.select(el.dataset.choice, el.querySelector('h3')?.textContent || el.dataset.choice);
+  }
+</script>
+</head>
+<body>
+
+<h2>Hero bölümü nasıl hissettirmeli?</h2>
+<p class="sub">Üç farklı kompozisyon — aynı pirinç tema, farklı duygu.</p>
+
+<div class="grid">
+
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="tag"><span>Seçenek A</span><div class="letter">A</div></div>
+    <div class="hero-a">
+      <div class="left">
+        <div>
+          <div class="eyebrow">— Est. 1978</div>
+          <div class="big-text">Pirinç<br><em>& Zanaat</em></div>
+        </div>
+        <div>
+          <div style="font-size:10px; color:rgba(240,232,218,.45); font-style:italic; margin-bottom:10px;">El dökümü kapı kolları.</div>
+          <div class="cta-row">
+            <div class="btn">Koleksiyonu Gör</div>
+          </div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="product-shape"></div>
+      </div>
+    </div>
+    <div class="desc">
+      <h3>İki sütun — Klasik</h3>
+      <p>Sol metin, sağ ürün görseli. Mevcut düzene en yakın, ama çok daha temiz.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="tag"><span>Seçenek B</span><div class="letter">B</div></div>
+    <div class="hero-b">
+      <div class="eyebrow">Peksan Metal · 1978</div>
+      <div class="big-text">El Dökümü<br><em>Pirinç</em></div>
+      <div class="sub-text">Kapı kolu, tokmak ve özel metal aksesuar.</div>
+      <div class="btn">Koleksiyonu Keşfet →</div>
+    </div>
+    <div class="desc">
+      <h3>Tam ekran merkez — Zarif</h3>
+      <p>Her şey ortada, simetrik. Referans sitedeki gibi ama mevcut temizliğiyle.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="tag"><span>Seçenek C</span><div class="letter">C</div></div>
+    <div class="hero-c">
+      <div class="bg-text">PEKSAN</div>
+      <div class="content">
+        <div class="eyebrow">İstanbul · Est. 1978</div>
+        <div class="big-text">El İşçiliği<br><em>Pirinç Atölyesi</em></div>
+      </div>
+      <div class="meta">
+        <div class="n">Yıl</div>
+        <div class="v">46+</div>
+      </div>
+    </div>
+    <div class="desc">
+      <h3>Sinematik alt — Çarpıcı</h3>
+      <p>Dev arka plan metni, içerik aşağıda. En cesur ve sürpriz his. Çok farklı.</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="selection-hint">Bir seçenek tıklayın veya terminalde yazın</p>
+
+</body>
+</html>

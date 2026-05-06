@@ -4,11 +4,9 @@ import { useEffect, useState } from "react";
 import { Logo } from "./Logo";
 
 const LINKS = [
-  { href: "#story", label: "Atölye" },
-  { href: "#craft", label: "Süreç" },
-  { href: "#catalog", label: "Koleksiyon" },
-  { href: "#reviews", label: "Referanslar" },
-  { href: "#contact", label: "İletişim" },
+  { href: "/", label: "Anasayfa" },
+  { href: "/galeri", label: "Galeri" },
+  { href: "/#contact", label: "İletişim" },
 ];
 
 export function Nav() {
@@ -41,9 +39,6 @@ export function Nav() {
               </a>
             ))}
           </div>
-          <a href="#contact" className="nav-cta">
-            Teklif Al &nbsp;→
-          </a>
           <button
             className="nav-toggle"
             aria-label={menuOpen ? "Menüyü kapat" : "Menüyü aç"}
@@ -77,9 +72,6 @@ export function Nav() {
             {l.label}
           </a>
         ))}
-        <a href="#contact" className="nav-cta" onClick={() => setMenuOpen(false)}>
-          Teklif Al &nbsp;→
-        </a>
       </div>
     </>
   );

@@ -32,8 +32,8 @@ export function Hero() {
                 <path d="M1 6H15M15 6L10 1M15 6L10 11" stroke="currentColor" strokeWidth="1.5" />
               </svg>
             </a>
-            <a href="#story" className="btn-ghost">
-              Atölyemizi Tanıyın
+            <a href="#contact" className="btn-ghost">
+              Teklif İste
               <svg
                 width="14"
                 height="14"
