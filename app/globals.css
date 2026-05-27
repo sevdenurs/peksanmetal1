@@ -910,6 +910,29 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
   align-items: start;
 }
 .contact-left h2 { margin-bottom: 32px; }
+.contact-visual {
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid var(--rule);
+}
+.contact-visual-img {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/5;
+  overflow: hidden;
+}
+.contact-visual-img img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 1.2s ease;
+}
+.contact-visual:hover .contact-visual-img img { transform: scale(1.04); }
+.contact-visual figcaption {
+  font-family: var(--mono); font-size: 10px;
+  letter-spacing: .2em; text-transform: uppercase;
+  color: var(--brass);
+  padding: 14px 0;
+  display: flex; justify-content: space-between;
+}
 .contact-info {
   margin-top: 48px;
   display: grid; gap: 28px;

@@ -1,4 +1,4 @@
-import { ContactForm } from "./ContactForm";
+import Image from "next/image";
 
 export function Contact() {
   return (
@@ -13,43 +13,49 @@ export function Contact() {
               <em>sohbet</em> başlatın.
             </h2>
             <p className="body" style={{ marginTop: 28 }}>
-              Özel ölçü, özel motif, restorasyon ya da toplu sipariş — her proje için
-              önce çay, sonra çizim. Atölyemizi ziyaret etmek ister misiniz?
+              Özel ölçü, özel motif, restorasyon ya da toplu siparişleriniz için bizimle iletişime geçebilirsiniz. En kısa sürede size geri dönüş yapacağız.
             </p>
             <div className="contact-info">
               <div className="info-block">
                 <div className="lbl">— Atölye</div>
                 <div className="val">
-                  Kemeraltı Cd. No:42
-                  <br />
-                  Karaköy, İstanbul
+                  Arnavutköy, İstanbul
                 </div>
                 <div className="sub">
-                  Hafta içi 09:00 – 18:30 · Cumartesi randevu ile
+                  Hafta içi 09:00 – 18:30. Cumartesi 10:00 – 16:00
                 </div>
               </div>
               <div className="info-block">
                 <div className="lbl">— Telefon &amp; WhatsApp</div>
                 <div className="val">
-                  <a href="tel:+902122521478">+90 212 252 14 78</a>
+                  <a href="tel:+902122521478">+90 545 658 34 58</a>
                 </div>
                 <div className="sub">
-                  Teknik sorularınız için usta başı Hüseyin bey
+                  Teknik sorularınız için WhatsApp üzerinden de ulaşabilirsiniz
                 </div>
               </div>
               <div className="info-block">
                 <div className="lbl">— E-posta</div>
                 <div className="val">
-                  <a href="mailto:info@peksanmetal.com">info@peksanmetal.com</a>
-                </div>
-                <div className="sub">
-                  24 saat içinde yanıt · PDF katalog talep edebilirsiniz
+                  <a href="mailto:zaferpekk@gmail.com">zaferpekk@gmail.com</a>
                 </div>
               </div>
             </div>
           </div>
 
-          <ContactForm />
+          <figure className="contact-visual reveal">
+            <div className="contact-visual-img">
+              <Image
+                src="/assets/showroom-wall.jpg"
+                alt="Peksan atölyesinde sergilenen el yapımı pirinç kapı aksesuarları"
+                fill
+                sizes="(max-width: 1080px) 100vw, 50vw"
+              />
+            </div>
+            <figcaption>
+              <span>Arnavutköy, İstanbul</span>
+            </figcaption>
+          </figure>
         </div>
       </div>
     </section>
