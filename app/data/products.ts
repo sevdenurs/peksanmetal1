@@ -135,25 +135,6 @@ export const PRODUCTS: Product[] = [
     badge: "El Dökümü",
   },
   {
-    id: "pm-0504",
-    code: "PM-0504",
-    cat: "ispanyolet",
-    img: "/assets/ispanyolet-oval-seri.jpg",
-    alt: "Pirinç İspanyolet seri — dört farklı oval model",
-    title: "İspanyolet — Klasik Oval Seri",
-    meta: ["Komple pirinç", "Nikel · Altın finiş"],
-  },
-  {
-    id: "pm-0505",
-    code: "PM-0505",
-    cat: "kol",
-    img: "/assets/kapikolu-rokoko-pirinc.jpg",
-    alt: "Rokoko tarzı pirinç kapı kolu — uzun İspanyolet plakalı",
-    title: "Rokoko Pirinç Kapı Kolu",
-    meta: ["Saf pirinç · Altın cila", "İspanyolet plakalı"],
-    badge: "Signature",
-  },
-  {
     id: "pm-0506",
     code: "PM-0506",
     cat: "kol",
@@ -192,16 +173,7 @@ export const PRODUCTS: Product[] = [
     meta: ["Pirinç · Bronz · Dövme", "Sipariş ile üretim"],
     badge: "Osmanlı",
   },
-  {
-    id: "pm-0510",
-    code: "PM-0510",
-    cat: "kilit",
-    img: "/assets/osmanli-desenli-kilit.jpg",
-    alt: "Osmanlı geometrik desenli pirinç kilit — Cezayir motifi",
-    title: "Osmanlı Desenli Pirinç Kilit",
-    meta: ["Saf pirinç · Geometrik motif", "El kakması"],
-    badge: "Osmanlı",
-  },
+  
 
   // — Yeni eklenen ürünler —
   {

@@ -20,7 +20,7 @@ export function Hero() {
           </p>
           <div className="hero-ctas reveal">
             <a href="#catalog" className="btn-primary">
-              Koleksiyonu Keşfet
+              Göz At
               <svg
                 className="arrow"
                 width="16"
@@ -33,7 +33,7 @@ export function Hero() {
               </svg>
             </a>
             <a href="#contact" className="btn-ghost">
-              Teklif İste
+              İletişime Geç
               <svg
                 width="14"
                 height="14"
@@ -56,16 +56,15 @@ export function Hero() {
               <div className="ms">Yıllık zanaat</div>
             </div>
             <div>
-              <div className="mk">— Koleksiyon</div>
-              <div className="mv">240</div>
-              <div className="ms">Özgün model</div>
+              <div className="mk">— Ürün Yelpazesi</div>
+              <div className="mv">100+</div>
+              <div className="ms">Farklı ürün</div>
             </div>
             <div>
-              <div className="mk">— Müşteri</div>
-              <div className="mv">
-                4.9<span style={{ fontSize: ".55em", color: "var(--brass)" }}>★</span>
-              </div>
-              <div className="ms">820+ değerlendirme</div>
+              <div className="mk">— El İşçiliği</div>
+              <div className="mv">100%</div>
+              <div className="ms">Zanaatkâr tamamlaması</div>
+              
             </div>
           </div>
         </div>
@@ -93,7 +92,7 @@ export function Hero() {
               </defs>
               <text fontFamily="JetBrains Mono, monospace" fontSize="9" letterSpacing="3" fill="#c9a961">
                 <textPath href="#circ">
-                  HANDCRAFTED · SINCE 1978 · İSTANBUL · PEKSAN METAL ·{" "}
+                  HANDCRAFTED · SINCE 1980 · İSTANBUL · PEKSAN METAL ·{" "}
                 </textPath>
               </text>
             </svg>
