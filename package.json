@@ -2,8 +2,9 @@
   "name": "peksan-metal",
   "version": "1.0.0",
   "private": true,
-  "description": "Peksan Metal — Pirinç kapı kolu, tokmak ve el işçiliği zanaat atölyesi. Next.js site.",
+  "description": "Peksan Metal — Pirinç kapı kolu, tokmak ve el işçiliği zanaat atölyesi.",
   "scripts": {
+    "postbuild": "next-sitemap",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -12,6 +13,7 @@
   },
   "dependencies": {
     "next": "15.5.15",
+    "next-sitemap": "^4.2.3",
     "react": "18.3.1",
     "react-dom": "18.3.1"
   },
@@ -21,4 +23,5 @@
     "@types/react-dom": "18.3.1",
     "typescript": "5.6.3"
   }
+  
 }

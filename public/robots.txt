@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://peksanmetal.com.tr
+
+# Sitemaps
+Sitemap: https://peksanmetal.com.tr/sitemap.xml
