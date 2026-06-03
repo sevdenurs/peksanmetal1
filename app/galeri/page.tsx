@@ -22,7 +22,7 @@ export default function GaleriPage() {
             </h1>
             <p className="lede reveal">
               Pirinç, bronz ve dövme demir — her biri el işçiliğiyle üretilmiş,
-              her biri bir kapıya imza bırakmak için.
+              kapı kolu, tokmak, sürgü, mandal, kilit plakası ve diğer aksesuarlarımız.
             </p>
           </div>
         </section>

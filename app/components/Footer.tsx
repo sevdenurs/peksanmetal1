@@ -8,8 +8,7 @@ export function Footer() {
           <div className="f-brand">
             <Logo />
             <p>
-              Pirincin sesini dinleyen üç nesildir aynı atölyede. Her kapı, kendi
-              hikâyesini kendi kolundan anlatır.
+              Tarihi konaklardan çağdaş mimariye 46 yıldır döktüğümüz, cilaladığımız ve elle tamamladığımız pirinç kapı kolu, tokmak ve aksesuarlar.
             </p>
           </div>
 

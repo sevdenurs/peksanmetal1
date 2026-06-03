@@ -9,7 +9,7 @@ export function FeaturedProject() {
         <div className="wrap fp-header-inner">
           <span className="fp-header-label">— Referans Proje</span>
           <div className="fp-header-rule" aria-hidden="true" />
-          <span className="fp-header-meta">Beşiktaş · İstanbul · 2024</span>
+          <span className="fp-header-meta">Beşiktaş · İstanbul · 2025</span>
         </div>
       </div>
 
@@ -74,9 +74,7 @@ export function FeaturedProject() {
             </div>
           </div>
           <div className="fp-story-right">
-            <span className="eyebrow">— Proje Hikâyesi</span>
             <h3 className="fp-story-title">
-              Tarihin<br /><em>Işığında</em>
             </h3>
             <p className="lede">
               Her detayda Osmanlı zarafeti, her birleşimde usta eli.
@@ -114,7 +112,7 @@ export function FeaturedProject() {
               style={{ objectFit: "cover" }}
             />
           </div>
-          <div className="fp-strip-cap">Saray Cephesi — Gece Görünümü</div>
+          <div className="fp-strip-cap">Saray Cephesi</div>
         </div>
         <div className="fp-strip-item reveal">
           <div className="fp-strip-img">
