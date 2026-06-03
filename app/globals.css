@@ -105,13 +105,11 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 .nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   padding: 18px 32px;
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  background: linear-gradient(180deg, rgba(20, 15, 11, .75), rgba(20, 15, 11, .45) 70%, transparent);
+  background: #140f0b;
   transition: background .3s, box-shadow .3s;
 }
 .nav.scrolled {
-  background: rgba(20, 15, 11, .92);
+  background: #140f0b;
   box-shadow: 0 1px 0 rgba(201, 169, 97, .12);
 }
 .nav-inner {
