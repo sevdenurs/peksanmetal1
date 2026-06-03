@@ -28,7 +28,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "pm-0287",
     code: "PM-0287",
-    cat: "mandal",
+    cat: "ispanyolet",
     img: "/assets/bronze-rod-vertical.jpg",
     alt: "Osmanî dikey sürgü — antik bronz el dövmesi kapı aksesuarı",
     title: "Osmanî Dikey Sürgü",
@@ -50,7 +50,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "pm-0108",
     code: "PM-0108",
-    cat: "mandal",
+    cat: "ispanyolet",
     img: "/assets/bronze-bars-display.jpg",
     alt: "Yıldız motifli patina bronz kapı çubuğu — özel ölçü el işçiliği",
     title: "Yıldız Motifli Bronz Çubuk",
@@ -108,7 +108,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "pm-0501",
     code: "PM-0501",
-    cat: "mandal",
+    cat: "kol",
     img: "/assets/oval-medalyon-surgu.jpg",
     alt: "Oval madalyon motifli antika bronz sürgü — el dövmesi",
     title: "Oval Madalyon Sürgü",
@@ -258,7 +258,6 @@ export const FILTERS: { key: Category; label: string }[] = [
   { key: "all", label: "Tümü" },
   { key: "kol", label: "Kapı Kolu" },
   { key: "tokmak", label: "Tokmak" },
-  { key: "mandal", label: "Mandal" },
   { key: "ispanyolet", label: "İspanyolet" },
   { key: "kilit", label: "Kilit" },
 ];
